@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "814205268777",
+    "project_id": "codequiz-c13c1",
+    "storage_bucket": "codequiz-c13c1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:814205268777:android:3f95303a781e1f79b93d38",
+        "android_client_info": {
+          "package_name": "com.codequiz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "814205268777-u736dmtv5rd90vlsibn37g166g6m28kq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD69n5ISiJExk2sLpPXUjBxyP8NPneBs-U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "814205268777-u736dmtv5rd90vlsibn37g166g6m28kq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
