@@ -23,8 +23,8 @@ public class StartScreenActivity extends AppCompatActivity {
     }
 
     public void getStarted(View view) {
-//        Intent i = new Intent(this, StartActivity.class);
-//        startActivity(i);
+        Intent i = new Intent(this, StartActivity.class);
+        startActivity(i);
     }
 
     public void about(View view) {

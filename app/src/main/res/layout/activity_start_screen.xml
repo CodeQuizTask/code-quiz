@@ -27,6 +27,7 @@
         android:layout_marginBottom="50dp"
         android:onClick="about"
         android:text="@string/about"
+        android:textColor="@color/black"
         android:background="@drawable/round_back_white_stroke10"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
