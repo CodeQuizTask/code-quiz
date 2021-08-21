@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Code Quiz</string>
+    <string name="get_started">Get Started</string>
+    <string name="about">About</string>
+    <string name="codequiz">CodeQuiz!</string>
+    <string name="welcome_to">Welcome to</string>
+    <string name="back">back</string>
 </resources>
