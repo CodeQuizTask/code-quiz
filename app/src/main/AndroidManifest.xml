@@ -13,6 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CodeQuiz">
         <activity android:name=".MainActivity" />
+        <activity android:name=".AboutActivity" />
+        <activity android:name=".StartScreenActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".LoginActivity">
             <intent-filter>

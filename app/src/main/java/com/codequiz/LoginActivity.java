@@ -73,6 +73,9 @@ public class LoginActivity extends AppCompatActivity {
                             loadingPB.setVisibility(View.GONE);
                             Toast.makeText(LoginActivity.this, "Login Successful..", Toast.LENGTH_SHORT).show();
                             //on below line we are opening our mainactivity.
+                            Intent i = new Intent(LoginActivity.this, StartScreenActivity.class);
+                            startActivity(i);
+                            finish();
                         } else {
                             //hiding our progress bar and displaying a toast message.
                             loadingPB.setVisibility(View.GONE);
@@ -92,6 +95,9 @@ public class LoginActivity extends AppCompatActivity {
         FirebaseUser user = mAuth.getCurrentUser();
         if (user != null) {
             //if the user is not null then we are opening a main activity on below line.
+            Intent i = new Intent(LoginActivity.this, StartScreenActivity.class);
+            startActivity(i);
+            this.finish();
         }
 
     }
