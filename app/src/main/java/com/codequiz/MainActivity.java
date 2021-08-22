@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -61,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
         final ImageView timerIcon = findViewById(R.id.timerIcon);
         final TextView learn = findViewById(R.id.learnMore);
         final ImageView learnIcon = findViewById(R.id.learnMoreIcon);
+        final LinearLayout topRightLayout = findViewById(R.id.topRightLayout);
         question = findViewById(R.id.question);
         questions = findViewById(R.id.questions);
         option1 = findViewById(R.id.option1);
@@ -255,7 +257,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        learn.setOnClickListener(new View.OnClickListener() {
+        topRightLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com/search?q=learn " + getTopicName));
