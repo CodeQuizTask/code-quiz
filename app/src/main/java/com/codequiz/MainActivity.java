@@ -120,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
                     // change selected AppCompatButton background color and text color
                     option1.setTextColor(Color.WHITE);
                     // change selected AppCompatButton background color and text color
-                    option1.setBackgroundResource(R.drawable.round_back_light_yellow10);
+                    option1.setBackgroundResource(R.drawable.round_back_purple10);
                     // assign user answer value to userSelectedOption in QuestionsList class
                     questionsLists.get(currentQuestionPosition).setUserSelectedOption(selectedOptionByUser);
                 }
@@ -149,7 +149,7 @@ public class MainActivity extends AppCompatActivity {
                     // change selected AppCompatButton background color and text color
                     option2.setTextColor(Color.WHITE);
                     // change selected AppCompatButton background color and text color
-                    option2.setBackgroundResource(R.drawable.round_back_light_yellow10);
+                    option2.setBackgroundResource(R.drawable.round_back_purple10);
                     // assign user answer value to userSelectedOption in QuestionsList class
                     questionsLists.get(currentQuestionPosition).setUserSelectedOption(selectedOptionByUser);
                 }
@@ -178,7 +178,7 @@ public class MainActivity extends AppCompatActivity {
                     // change selected AppCompatButton background color and text color
                     option3.setTextColor(Color.WHITE);
                     // change selected AppCompatButton background color and text color
-                    option3.setBackgroundResource(R.drawable.round_back_light_yellow10);
+                    option3.setBackgroundResource(R.drawable.round_back_purple10);
                     // assign user answer value to userSelectedOption in QuestionsList class
                     questionsLists.get(currentQuestionPosition).setUserSelectedOption(selectedOptionByUser);
                 }
@@ -207,7 +207,7 @@ public class MainActivity extends AppCompatActivity {
                     // change selected AppCompatButton background color and text color
                     option4.setTextColor(Color.WHITE);
                     // change selected AppCompatButton background color and text color
-                    option4.setBackgroundResource(R.drawable.round_back_light_yellow10);
+                    option4.setBackgroundResource(R.drawable.round_back_purple10);
                     // assign user answer value to userSelectedOption in QuestionsList class
                     questionsLists.get(currentQuestionPosition).setUserSelectedOption(selectedOptionByUser);
                 }
