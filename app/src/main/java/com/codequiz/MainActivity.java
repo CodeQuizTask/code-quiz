@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
     // Total questions and main question TextView
     private TextView question;
     private TextView questions;
+    private String origin;
 
     // selectedOption's Value. if user not selected any option yet then it is empty by default
     private String selectedOptionByUser = "";
@@ -73,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
 
         // get Topic Name and User Name from StartActivity via Intent
         final String getTopicName = getIntent().getStringExtra("selectedTopic");
-        final String origin = getIntent().getStringExtra("origin");
+        origin = getIntent().getStringExtra("origin");
 
         if (origin.equals("selectedTopicToPractice")) {
             learn.setVisibility(View.VISIBLE);
@@ -401,7 +402,11 @@ public class MainActivity extends AppCompatActivity {
 
         // change next button text to submit if it is last question
         if ((currentQuestionPosition + 1) == questionsLists.size()) {
-            nextBtn.setText("Submit Quiz");
+            if (origin.equals("selectedTopicToPractice")) {
+                nextBtn.setText("Finish");
+            } else {
+                nextBtn.setText("Submit Quiz");
+            }
         }
 
         // check if next question is available. else quiz completed
@@ -437,9 +442,15 @@ public class MainActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
             // Open result activity along with correct and incorrect answers
-            Intent intent = new Intent(MainActivity.this, QuizResults.class);
-            intent.putExtra("correct", getCorrectAnswers());
-            intent.putExtra("incorrect", getIncorrectAnswers());
+            Intent intent = new Intent();
+            if (origin.equals("selectedTopicToPractice")) {
+                intent = new Intent(MainActivity.this, StartActivity.class);
+            } else {
+                intent = new Intent(MainActivity.this, QuizResults.class);
+                intent.putExtra("correct", getCorrectAnswers());
+                intent.putExtra("incorrect", getIncorrectAnswers());
+            }
+
             startActivity(intent);
 
             // finish(destroy) this activity

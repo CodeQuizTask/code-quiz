@@ -35,7 +35,9 @@ public class StartActivity extends AppCompatActivity {
     // selectedTopicName will be assigned by a topic name ('java', 'javascript', 'python', 'php')
     private String selectedTopicName = "";
     private String TAG = "quizapp";
-    FirebaseFirestore firestore;
+    private ProgressBar loader;
+    private FirebaseFirestore firestore;
+    private LinearLayout quizButtonsLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,8 +52,8 @@ public class StartActivity extends AppCompatActivity {
         final LinearLayout phpLayout = findViewById(R.id.phpLayout);
         final LinearLayout pyLayout = findViewById(R.id.pyLayout);
         final LinearLayout jsLayout = findViewById(R.id.jsLayout);
-        final ProgressBar loader = findViewById(R.id.idPBLoading);
-        final LinearLayout quizButtonsLayout = findViewById(R.id.quizBtnsLayout);
+        loader = findViewById(R.id.idPBLoading);
+        quizButtonsLayout = findViewById(R.id.quizBtnsLayout);
 
         javaLayout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,7 +62,7 @@ public class StartActivity extends AppCompatActivity {
                 // assign java to selectedTopicName
                 selectedTopicName = "java";
                 if (javaList.isEmpty()) {
-                    getQuestions(selectedTopicName, loader, quizButtonsLayout);
+                    getQuestionsData();
                 } else {
                     quizButtonsLayout.setVisibility(View.VISIBLE);
                 }
@@ -82,7 +84,7 @@ public class StartActivity extends AppCompatActivity {
                 // assign php to selectedTopicName
                 selectedTopicName = "php";
                 if (phpList.isEmpty()) {
-                    getQuestions(selectedTopicName, loader, quizButtonsLayout);
+                    getQuestionsData();
                 } else {
                     quizButtonsLayout.setVisibility(View.VISIBLE);
                 }
@@ -104,7 +106,7 @@ public class StartActivity extends AppCompatActivity {
                 // assign html to selectedTopicName
                 selectedTopicName = "python";
                 if (pyList.isEmpty()) {
-                    getQuestions(selectedTopicName, loader, quizButtonsLayout);
+                    getQuestionsData();
                 } else {
                     quizButtonsLayout.setVisibility(View.VISIBLE);
                 }
@@ -126,7 +128,7 @@ public class StartActivity extends AppCompatActivity {
                 // assign android to selectedTopicName
                 selectedTopicName = "js";
                 if (jsList.isEmpty()) {
-                    getQuestions(selectedTopicName, loader, quizButtonsLayout);
+                    getQuestionsData();
                 } else {
                     quizButtonsLayout.setVisibility(View.VISIBLE);
                 }
@@ -198,7 +200,7 @@ public class StartActivity extends AppCompatActivity {
         });
     }
 
-    private void getQuestions(String selectedTopicName, ProgressBar loader, LinearLayout quizButtonsLayout) {
+    private void getQuestionsData() {
         quizButtonsLayout.setVisibility(View.GONE);
         loader.setVisibility(View.VISIBLE);
         firestore.collection(selectedTopicName).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
