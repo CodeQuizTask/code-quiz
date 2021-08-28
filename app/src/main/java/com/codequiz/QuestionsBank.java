@@ -39,7 +39,7 @@ public class QuestionsBank {
 
     public static List<QuestionsList> getQuestions(String selectedTopicName, String origin){
         List data = getData(selectedTopicName);
-        if (origin.equals("selectedTopic")) return data.subList(0, 5);
+        if (origin.equals("selectedTopic")) return data.subList(0, 15);
         return data;
     }
 }

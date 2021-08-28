@@ -64,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
         final TextView learn = findViewById(R.id.learnMore);
         final ImageView learnIcon = findViewById(R.id.learnMoreIcon);
         final LinearLayout topRightLayout = findViewById(R.id.topRightLayout);
+
         question = findViewById(R.id.question);
         questions = findViewById(R.id.questions);
         option1 = findViewById(R.id.option1);
@@ -119,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     // check if user has not attempted this question yet
                     selectedOptionByUser = option1.getText().toString();
-                    handleOptionSelection(selectedOptionByUser);
+                    handleOptionSelection("Option1");
                     // change selected AppCompatButton background color and text color
                     option1.setTextColor(Color.WHITE);
                     // change selected AppCompatButton background color and text color
@@ -148,7 +149,7 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     // check if user has not attempted this question yet
                     selectedOptionByUser = option2.getText().toString();
-                    handleOptionSelection(selectedOptionByUser);
+                    handleOptionSelection("Option2");
                     // change selected AppCompatButton background color and text color
                     option2.setTextColor(Color.WHITE);
                     // change selected AppCompatButton background color and text color
@@ -177,7 +178,7 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     // check if user has not attempted this question yet
                     selectedOptionByUser = option3.getText().toString();
-                    handleOptionSelection(selectedOptionByUser);
+                    handleOptionSelection("Option3");
                     // change selected AppCompatButton background color and text color
                     option3.setTextColor(Color.WHITE);
                     // change selected AppCompatButton background color and text color
@@ -206,7 +207,7 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     // check if user has not attempted this question yet
                     selectedOptionByUser = option4.getText().toString();
-                    handleOptionSelection(selectedOptionByUser);
+                    handleOptionSelection("Option4");
                     // change selected AppCompatButton background color and text color
                     option4.setTextColor(Color.WHITE);
                     // change selected AppCompatButton background color and text color

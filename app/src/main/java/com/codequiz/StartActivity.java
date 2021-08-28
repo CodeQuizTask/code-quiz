@@ -32,6 +32,7 @@ public class StartActivity extends AppCompatActivity {
     private static ArrayList jsList = new ArrayList<>();
     private static ArrayList phpList = new ArrayList<>();
     private static ArrayList pyList = new ArrayList<>();
+    private static ArrayList randomList = new ArrayList<>();
     // selectedTopicName will be assigned by a topic name ('java', 'javascript', 'python', 'php')
     private String selectedTopicName = "";
     private String TAG = "quizapp";
@@ -48,6 +49,7 @@ public class StartActivity extends AppCompatActivity {
         // Initialize widgets from activity_splash_screen.xml
         final Button startBtn = findViewById(R.id.startQuizBtn);
         final Button practiceBtn = findViewById(R.id.startPractice);
+        final Button randomQuizeBtn = findViewById(R.id.startRandomQuizBtn);
         final LinearLayout javaLayout = findViewById(R.id.javaLayout);
         final LinearLayout phpLayout = findViewById(R.id.phpLayout);
         final LinearLayout pyLayout = findViewById(R.id.pyLayout);
@@ -140,6 +142,31 @@ public class StartActivity extends AppCompatActivity {
                 javaLayout.setBackgroundResource(R.drawable.round_back_white10);
                 phpLayout.setBackgroundResource(R.drawable.round_back_white10);
                 pyLayout.setBackgroundResource(R.drawable.round_back_white10);
+            }
+        });
+
+        randomQuizeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (phpList.isEmpty() || javaList.isEmpty() /*|| pyList.isEmpty() || jsList.isEmpty()*/) {
+                    Toast.makeText(StartActivity.this, "You have to practice all topics first!", Toast.LENGTH_SHORT).show();
+                } else {
+//                    randomList.add(jsList);
+                    randomList.addAll(javaList);
+//                    randomList.add(pyList);
+                    randomList.addAll(phpList);
+                    // Create an Object of Intent to open quiz questions screen
+                    final Intent intent = new Intent(StartActivity.this, MainActivity.class);
+
+                    //put user entered name and selected topic name to intent for use in next activity
+                    intent.putExtra("selectedTopic", "random");
+                    intent.putExtra("origin", "selectedTopic");
+
+                    // call startActivity to open next activity along with data(userName, selectedTopicName)
+                    startActivity(intent);
+
+                    finish(); // finish (destroy) this activity
+                }
             }
         });
 
@@ -258,8 +285,10 @@ public class StartActivity extends AppCompatActivity {
                 return phpList;
             case "js":
                 return jsList;
-            default:
+            case "python":
                 return pyList;
+            default:
+                return randomList;
         }
     }
 }
