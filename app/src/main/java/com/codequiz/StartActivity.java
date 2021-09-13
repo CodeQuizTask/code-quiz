@@ -148,7 +148,7 @@ public class StartActivity extends AppCompatActivity {
         randomQuizeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (phpList.isEmpty() || javaList.isEmpty() /*|| pyList.isEmpty() || jsList.isEmpty()*/) {
+                if (phpList.isEmpty() || javaList.isEmpty() || pyList.isEmpty() || jsList.isEmpty()) {
                     Toast.makeText(StartActivity.this, "You have to practice all topics first!", Toast.LENGTH_SHORT).show();
                 } else {
 //                    randomList.add(jsList);
