@@ -42,6 +42,7 @@ public class LoginActivity extends AppCompatActivity {
     private static final String TAG = "quizapp";
     private static final int RC_SIGN_IN = 9001;
     private GoogleSignInClient mGoogleSignInClient;
+    private String clientId = "814205268777-u736dmtv5rd90vlsibn37g166g6m28kq.apps.googleusercontent.com";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +59,7 @@ public class LoginActivity extends AppCompatActivity {
 
         GoogleSignInOptions gso = new GoogleSignInOptions
                 .Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken(getString(R.string.default_web_client_id))
+                .requestIdToken(clientId)
                 .requestEmail()
                 .build();
 
